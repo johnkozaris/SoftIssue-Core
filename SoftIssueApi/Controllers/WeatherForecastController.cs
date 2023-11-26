@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace softissue_api.Controllers;
+namespace SoftIssueApi.Controllers;
 
 [ApiController]
 [Route("[controller]")]

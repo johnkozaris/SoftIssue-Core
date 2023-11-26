@@ -1,0 +1,12 @@
+<Project>
+  <PropertyGroup>
+    <EntityFrameworkCoreVersion>8.0.0</EntityFrameworkCoreVersion>
+    <SwashbuckleVersion>6.4.0</SwashbuckleVersion>
+    <AspNetCoreOpenApiVersion>8.0.0</AspNetCoreOpenApiVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Update="Microsoft.EntityFrameworkCore.InMemory" Version="$(EntityFrameworkCoreVersion)" />
+    <PackageReference Update="Swashbuckle.AspNetCore" Version="$(SwashbuckleVersion)" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="$(AspNetCoreOpenApiVersion)" />
+  </ItemGroup>
+</Project>

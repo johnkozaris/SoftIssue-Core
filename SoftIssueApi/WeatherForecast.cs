@@ -1,4 +1,4 @@
-namespace softissue_api;
+namespace SoftIssueApi;
 
 public class WeatherForecast
 {
