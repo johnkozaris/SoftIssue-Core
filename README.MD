@@ -4,10 +4,10 @@
 SoftIssue-Core is a .NET 8 solution designed for building scalable web applications with a microservices architecture. The solution includes a WebAPI project for backend controllers, microservices in the Services directory, and a shared library for common functionalities.
 
 ### Project Structure
-- **SoftIssue-Core/SoftIssue.sln**: The main solution file.
-- **SoftIssue-Core/SoftIssueApi**: The WebAPI project for backend controllers.
-- **SoftIssue-Core/Services/MyService**: Microservices projects.
-- **SoftIssue-Core/SharedLibrary**: Shared library for common code.
+- **SoftIssue-Core/src/SoftIssue.sln**: The main solution file.
+- **SoftIssue-Core/src/WebAPIs/MyAPI**: The WebAPI projects for exposing backend controllers.
+- **SoftIssue-Core/src/Services/MyService**: Microservices projects.
+- **SoftIssue-Core/src/SharedLibrary**: Shared library for common code.
 
 ## Prerequisites
 - .NET 8 SDK
@@ -28,27 +28,30 @@ git clone [repository-url]
 cd SoftIssue-Core
 dotnet build
 ```
-### Running the WebAPI
-To run the WebAPI project:
+### Running a WebAPI
+To run a WebAPI project:
 
 ```bash
 cd SoftIssueApi
-dotnet run
+dotnet run --project src/WebAPIs/SoftIssueApi
 ```
 ### Accessing Swagger UI
-Once the WebAPI project is running, you can access the Swagger UI to interact with the API by navigating to http://localhost:5000/swagger in your web browser.
+Once the WebAPI project is running, you can access the Swagger UI to interact with the API by navigating to http://localhost:{YourPort}/swagger in your web browser.
+You can  test any of the endpoints by clicking on the endpoint and then clicking the "Try it out" button. You can then enter the required parameters and click the "Execute" button to test the endpoint.
+![WebAPIExample](images/webAPIExample.png)
 
 ### Adding a New Service
 To add a new service:
+Create a new project in the Services directory.
 
-#### Create a new project in the Services directory.
 Add the new project to the solution file:
 ```bash
-dotnet sln SoftIssue.sln add ./Services/NewService/NewService.csproj
+dotnet sln SoftIssue.sln add ./src/Services/NewService/NewService.csproj
 ```
-#### Reference the SharedLibrary if needed:
+
+Reference the SharedLibrary if needed:
 ```bash
-dotnet add ./Services/NewService/NewService.csproj reference ./SharedLibrary/SharedLibrary.csproj
+dotnet add ./src/Services/NewService/NewService.csproj reference ./src/SharedLibrary/SharedLibrary.csproj
 ```
 ### Managing NuGet Packages
 Adding a NuGet Package:
