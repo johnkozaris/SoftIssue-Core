@@ -1,12 +1,15 @@
 <Project>
+
   <PropertyGroup>
-    <EntityFrameworkCoreVersion>8.0.0</EntityFrameworkCoreVersion>
-    <SwashbuckleVersion>6.4.0</SwashbuckleVersion>
-    <AspNetCoreOpenApiVersion>8.0.0</AspNetCoreOpenApiVersion>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>true</InvariantGlobalization>
   </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Update="Microsoft.EntityFrameworkCore.InMemory" Version="$(EntityFrameworkCoreVersion)" />
-    <PackageReference Update="Swashbuckle.AspNetCore" Version="$(SwashbuckleVersion)" />
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="$(AspNetCoreOpenApiVersion)" />
-  </ItemGroup>
+
+  <Target Name="SpicNSpan" AfterTargets="Clean">
+    <RemoveDir Directories="$(TargetDir)" />
+    <RemoveDir Directories="$(BaseIntermediateOutputPath)" />
+  </Target>
+
 </Project>
